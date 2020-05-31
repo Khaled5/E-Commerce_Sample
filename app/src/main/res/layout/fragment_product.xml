@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ProductFragment"
+    tools:showPaths="true"
+    android:background="@color/colorAccent">
+
+    <include layout="@layout/product_toolbar"
+        android:id="@+id/product_toolbar"/>
+
+    <ImageView
+        android:id="@+id/product_image"
+        android:layout_height="400dp"
+        style="@style/ProductImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription"
+        android:src="@drawable/ic_empty_image"
+        app:layout_constraintTop_toBottomOf="@id/product_toolbar" />
+
+    <TextView
+        android:id="@+id/product_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        style="@style/CustomTextViewStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_warehouse" />
+
+    <TextView
+        android:id="@+id/product_price"
+        style="@style/CustomTextViewStyle"
+        android:background="@drawable/rounded_corner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_title" />
+
+    <TextView
+        android:id="@+id/product_warehouse"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        style="@style/CustomTextViewStyle"
+        android:textColor="#5258FE"
+        android:drawableEnd="@drawable/ic_go_to_warehouse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_image" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

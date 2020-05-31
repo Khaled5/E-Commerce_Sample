@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context=".ui.EditProductFragment" >
+
+
+    <include layout="@layout/add_product_toolbar"
+        android:id="@+id/add_product_toolbar"/>
+
+    <ImageView
+        android:id="@+id/product_image"
+        android:layout_width="0dp"
+        android:layout_height="350dp"
+        style="@style/ProductImage"
+        tools:ignore="ContentDescription"
+        android:src="@drawable/ic_empty_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_product_toolbar" />
+
+    <Spinner
+        android:id="@+id/add_product_warehouse_spinner"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        tools:listitem="@layout/support_simple_spinner_dropdown_item"
+        android:entries="@array/warehouses"
+        android:theme="@style/ItemTextAppearance"
+        android:backgroundTint="@color/colorTextSecondary"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_image" />
+
+    <EditText
+        android:id="@+id/product_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="@string/title"
+        android:background="@drawable/rounded_corner"
+        style="@style/CustomTextViewStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_product_warehouse_spinner" />
+
+    <EditText
+        android:id="@+id/product_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/price"
+        android:background="@drawable/rounded_corner"
+        style="@style/CustomTextViewStyle"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_title" />
+
+    <ImageView
+        android:id="@+id/edit_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/ic_edit"
+        tools:ignore="ContentDescription"
+        app:layout_constraintBottom_toBottomOf="@+id/product_image"
+        app:layout_constraintEnd_toEndOf="@+id/product_image" />
+
+    <TextView
+        android:id="@+id/save_product"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/save"
+        style="@style/CustomSaveStyle"
+        android:background="@drawable/rounded_save_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

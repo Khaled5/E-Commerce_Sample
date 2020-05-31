@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.WarehouseFragment"
+    android:background="@color/colorAccent">
+
+
+
+    <include layout="@layout/warehouse_toolbar"
+        android:id="@+id/warehouse_toolbar"/>
+
+
+    <ImageView
+        android:id="@+id/warehouse_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_empty_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/warehouse_toolbar" />
+
+    <TextView
+        android:id="@+id/warehouse_name"
+        style="@style/CustomTitleTextAppearance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintStart_toEndOf="@+id/warehouse_image"
+        app:layout_constraintTop_toTopOf="@+id/warehouse_image" />
+
+    <RatingBar
+        android:id="@+id/warehouse_rating"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:rating="3.5"
+        android:theme="@style/RatingBar"
+        app:layout_constraintBottom_toTopOf="@+id/warehouse_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toEndOf="@+id/warehouse_image"
+        app:layout_constraintTop_toBottomOf="@+id/warehouse_name" />
+
+    <TextView
+        android:id="@+id/warehouse_address"
+        style="@style/CustomTitleTextAppearance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="14sp"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/warehouse_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/warehouse_image" />
+
+    <TextView
+        android:id="@+id/warehouse-about"
+        style="@style/CustomTitleTextAppearance"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:textSize="18sp"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/warehouse_map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/warehouse_image" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/warehouse_map"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/rounded_corner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        tools:context=".SupportMapFragment"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
